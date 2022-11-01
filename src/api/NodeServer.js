@@ -5,8 +5,8 @@ let publicFiles = ""
 const local = 1
 if (process.env.NODE_ENV === "development") {
     if (local === 1) {
-        host = "http://192.168.0.11:3003/api"
-        publicFiles = "http://192.168.0.11:3003/static"
+        host = "http://localhost:3003/api"
+        publicFiles = "http://localhost:3003/static"
     } else {
         host = "https://api-test.nekoadmin.com.ar/centro-drugstore/api"
         publicFiles = "https://api-test.nekoadmin.com.ar/centro-drugstore/static"

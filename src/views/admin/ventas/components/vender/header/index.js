@@ -43,7 +43,9 @@ const InvoiceHeader = ({
     setCondIvaCli,
     setValidPV,
     setModal1,
-    modal1
+    modal1,
+    invoiceDate,
+    setInvoiceDate
 }) => {
     const [ptoVtaList, setPtoVtaList] = useState(<option>No hay puntos de venta relacionados</option>)
     const [cbteStr, setCbteStr] = useState("")
@@ -116,7 +118,7 @@ const InvoiceHeader = ({
                                     <Col md="4" >
                                         <FormGroup>
                                             <Label for="exampleEmail">Fecha</Label>
-                                            <Input type="date" value={moment(new Date()).format("YYYY-MM-DD")} disabled />
+                                            <Input type="date" value={invoiceDate} onChange={e => setInvoiceDate(e.target.value)} />
                                         </FormGroup>
                                     </Col>
                                     <PtosVtas

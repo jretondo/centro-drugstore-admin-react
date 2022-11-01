@@ -56,6 +56,8 @@ const Ventas = ({
 
     const [modal1, setModal1] = useState(false)
 
+    const [invoiceDate, setInvoiceDate] = useState(moment(new Date()).format("YYYY-MM-DD"))
+
     const { totalPrecio, cancelarCompra, productsSellList } = useContext(productsSellContext)
 
     const cancelar = () => {
@@ -78,7 +80,7 @@ const Ventas = ({
     const generarFactura = async () => {
         const data = {
             dataFact: {
-                fecha: moment(new Date()).format("YYYY-MM-DD"),
+                fecha: invoiceDate,
                 pv_id: ptoVta.id,
                 fiscal: factFiscBool,
                 forma_pago: formaPago,
@@ -218,6 +220,8 @@ const Ventas = ({
                                 setValidPV={setValidPV}
                                 setModal1={setModal1}
                                 modal1={modal1}
+                                invoiceDate={invoiceDate}
+                                setInvoiceDate={setInvoiceDate}
                             />
 
                             <br />
